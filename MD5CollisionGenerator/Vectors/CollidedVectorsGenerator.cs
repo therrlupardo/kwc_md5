@@ -7,7 +7,7 @@ namespace MD5CollisionGenerator.Vectors
     {
         /// <summary>
         /// Taken from stripwire by Dan Kaminsky
-        /// <A href="http://www.doxpara.com/md5_someday.pdf">http://www.doxpara.com/md5_someday.pdf</A>
+        /// <A href="https://eprint.iacr.org/2004/357.pdf">https://eprint.iacr.org/2004/357.pdf</A>
         /// </summary>
         ///
         /// 
@@ -40,7 +40,7 @@ namespace MD5CollisionGenerator.Vectors
 
         /// <summary>
         /// Taken from stripwire by Dan Kaminsky
-        /// <A href="http://www.doxpara.com/md5_someday.pdf">http://www.doxpara.com/md5_someday.pdf</A>
+        /// <A href="https://eprint.iacr.org/2004/357.pdf">https://eprint.iacr.org/2004/357.pdf</A>
         /// </summary>
         public static byte[] CollidedVector =>
             new byte[]

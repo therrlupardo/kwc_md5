@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
+using Runner.Extensions;
 
 namespace Runner
 {
@@ -8,7 +11,8 @@ namespace Runner
         public static void Main(string[] args)
         {
             var inputFile = args[0];
-            var outputFile = args[1];
+            const string outputFile = "temp";
+            // var outputFile = args[1];
             using var reader = new BinaryReader(File.OpenRead(inputFile));
             var prefix = reader.ReadBytes(128);
             var sizeOfGoodFile = reader.ReadInt32();
@@ -18,6 +22,9 @@ namespace Runner
                 SaveEvilFileToOutput(outputFile, reader, sizeOfGoodFile, sizeOfEvilFile);
             else
                 SaveGoodFileToOutput(outputFile, reader, sizeOfGoodFile);
+
+            $"chmod +x ./{outputFile}".Bash();
+            Console.WriteLine($"./{outputFile}".Bash());
         }
 
         private static void SaveGoodFileToOutput(string outputFileName, BinaryReader reader, int sizeOfGoodFile)
